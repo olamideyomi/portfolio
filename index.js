@@ -70,40 +70,43 @@ const typed = new Typed(".multiple-text", {
 
 /*------------------- email validation with emailjs-------------*/
 function sendEmail(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+  event.preventDefault(); // Prevent the default form submission behavior
 
-    const form = document.getElementById("contact-form");
-    const name = form.name.value;
-    const email = form.email.value;
-    const subject = form.subject.value;
-    const message = form.message.value;
-    const mobile = form.mobile.value;
-    const templateParams = {
-      from_name: name,
-      email: email,
-      subject: subject,
-      message: message,
-      mobile: mobile,
-    };
-    emailjs.init("3U-UBSd1LTN-iaHMU"); // Replace with your EmailJS user ID
-    emailjs.send("service_3pvly9r", "template_a66adst", templateParams)
-      .then(function(response) {
-        console.log("SUCCESS", response);
-        showAlert("Your message has been sent successfully!");
-        form.reset();
-      }, function(error) {
-        console.log("FAILED", error);
-        showAlert("Oops! Something went wrong. Please try again later.");
-      });
+  const form = document.getElementById("contact-form");
+  const name = form.name.value;
+  const email = form.email.value;
+  const subject = form.subject.value;
+  const message = form.message.value;
+  const mobile = form.mobile.value;
+  const templateParams = {
+    from_name: name,
+    email: email,
+    subject: subject,
+    message: message,
+    mobile: mobile,
+  };
+  emailjs.init("3U-UBSd1LTN-iaHMU"); // Replace with your EmailJS user ID
+  emailjs.send("service_3pvly9r", "template_a66adst", templateParams).then(
+    function (response) {
+      console.log("SUCCESS", response);
+      showAlert("Your message has been sent successfully!");
+      form.reset();
+    },
+    function (error) {
+      console.log("FAILED", error);
+      showAlert("Oops! Something went wrong. Please try again later.");
+    }
+  );
 }
 
 function showAlert(message) {
-    const alertElement = document.getElementById("alertMessage");
-    alertElement.innerHTML = message;
-    alertElement.classList.add("show");
-    
-    // Hide the alert after 3 seconds
-    setTimeout(() => {
-      alertElement.classList.remove("show");
-    }, 3000);
-  }
+  const alertElement = document.getElementById("alertMessage");
+  alertElement.innerHTML = message;
+  alertElement.classList.add("show");
+
+  // Hide the alert after 3 seconds
+  setTimeout(() => {
+    alertElement.classList.remove("show");
+  }, 3000);
+}
+
