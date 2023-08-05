@@ -24,7 +24,7 @@ html {
   overflow-x: hidden;
 }
 body {
-  background-image: url("img/back2.jpg");
+  background: linear-gradient(to right, purple, #0ef);
   color: var(--text-color);
   background-size: cover;
 }
