@@ -24,7 +24,7 @@ html {
   overflow-x: hidden;
 }
 body {
-  background-image: url("img/banner-bg.png");
+  background-image: url("img/back2.jpg");
   color: var(--text-color);
   background-size: cover;
 }
