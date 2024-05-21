@@ -86,7 +86,7 @@ function sendEmail(event) {
     mobile: mobile,
   };
   emailjs.init("3U-UBSd1LTN-iaHMU"); // Replace with your EmailJS user ID
-  emailjs.send("service_3pvly9r", "template_a66adst", templateParams).then(
+  emailjs.send("service_e0sj1bk", "template_a66adst", templateParams).then(
     function (response) {
       console.log("SUCCESS", response);
       showAlert("Your message has been sent successfully!");
